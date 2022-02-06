@@ -1,7 +1,7 @@
 import { SaveUrlDto } from "../types/Projects/saveUrl.dto";
 import { executor } from "../classes/executor";
 
-export default (client) => {
+export const ProjectUrl = (client) => {
   return {
     create: (project_id: string, data: SaveUrlDto) => {
       return executor(client, {

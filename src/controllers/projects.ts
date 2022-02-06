@@ -3,7 +3,7 @@ import { executor } from "../classes/executor";
 import { Response } from "../classes/response";
 import { ProjectType } from "../types/Projects/project.type";
 
-export default (client) => {
+export const Projects = (client) => {
   return {
     create: async (project: SaveProjectDto): Promise<Response<ProjectType>> => {
       return await executor(client, {

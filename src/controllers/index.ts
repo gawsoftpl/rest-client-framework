@@ -1,2 +1,2 @@
-export * as Projects from "./projects";
-export * as ProjectUrl from "./projectUrl";
+export * from "./projects";
+export * from "./projectUrl";
