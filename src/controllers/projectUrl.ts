@@ -1,5 +1,5 @@
 import { SaveUrlDto } from "../types/Projects/saveUrl.dto";
-import { executor } from "../classes/method";
+import { executor } from "../classes/executor";
 
 export default (client) => {
   return {

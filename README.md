@@ -5,7 +5,7 @@ Rest client framework for your api client
 
 ```js
 // Client Stratgy
-import { ClientInterfac, Request, Response, ConfigType, ResponseInterface } from "@gawsoft/rest-api-client-framework";
+import { ClientInterface, Request, Response, ConfigType, ResponseInterface } from "@gawsoft/rest-api-client-framework";
 
 export class ClientTest implements ClientInterface {
   private api_key: string;

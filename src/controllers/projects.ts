@@ -1,5 +1,5 @@
 import { SaveProjectDto } from "../types/Projects/saveProject.dto";
-import { executor } from "../classes/method";
+import { executor } from "../classes/executor";
 import { Response } from "../classes/response";
 import { ProjectType } from "../types/Projects/project.type";
 
