@@ -1,8 +1,8 @@
 {
   "name": "rest-api-client-framework",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "main": "dist/src/index.js",
-  "types": "dist",
+
   "license": "MIT",
   "scripts": {
     "build": "tsc",
@@ -19,8 +19,7 @@
     "axios": "^0.24.0"
   },
   "files": [
-    "./src",
-    "./dist"
+    "dist"
   ],
   "devDependencies": {
     "@mockoon/cli": "^1.5.1",
