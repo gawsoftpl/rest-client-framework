@@ -1,5 +1,5 @@
 {
-  "name": "@gawsoft/rest-api-client-framework",
+  "name": "rest-api-client-framework",
   "version": "2.0.0",
   "main": "dist/src/index.js",
   "types": "dist",
