@@ -1,0 +1,60 @@
+{
+  "name": "@gawsoft/rest-api-client-framework",
+  "version": "2.0.0",
+  "main": "dist/src/index.js",
+  "types": "dist",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "dev:mock": "mockoon-cli start -d openapi/mockoon.json --pname openapi",
+    "dev:mock:stop": "mockoon-cli stop",
+    "start:dev": "tsc --watch",
+    "start:dev2": "nodemon --watch 'src/**' --ignore 'src/**/*.spec.ts' --exec 'tsc && node example/screenshot.js' ",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "generate_model": "docker run --rm -v $PWD/src/models:/local openapitools/openapi-generator-cli generate --global-property models -i /local/api-json.json -g typescript -o /local/"
+  },
+  "dependencies": {
+    "axios": "^0.24.0"
+  },
+  "files": [
+    "./src",
+    "./dist"
+  ],
+  "devDependencies": {
+    "@mockoon/cli": "^1.5.1",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.2",
+    "jimp": "^0.16.1",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "tests",
+    "testRegex": ".*\\.test\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
