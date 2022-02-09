@@ -97,6 +97,6 @@ export class Request {
   }
 
   remove(url: string, body: Record<string, any>): AxiosPromise {
-    return this.axiosInstance.delete(url,  this.axiosOptions());
+    return this.axiosInstance.delete(url, this.axiosOptions());
   }
 }

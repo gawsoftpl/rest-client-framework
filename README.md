@@ -1,6 +1,8 @@
 # About
-Rest client framework for your api client 
+Rest client framework for your api client. In below example how to use this simple script
 
+
+Write quick your api client
 # Example
 
 ```js
@@ -42,7 +44,7 @@ export class ClientTest implements ClientInterface {
             "Content-Type": "application/json",
         });
 
-        const response = await request.post(`/extract`, { a: 1 });
+        const response = await request.post(`/person`, { name: "Johnny Kowalski" });
         if (response.status !== 200)
             throw new Error(
                 `Cant download json file from server status code: ${response.status}`
