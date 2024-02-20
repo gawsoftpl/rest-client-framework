@@ -19,8 +19,8 @@ export class Request {
   private config: ConfigType;
 
   constructor(strategy: ClientInterface) {
-    this.client = strategy;
     this.setConfig(this.client.config());
+    this.setStrategy(strategy);
   }
 
   setConfig(config: ConfigType) {
