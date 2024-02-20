@@ -9,7 +9,7 @@ import { MethodType } from "../types/method.type";
  */
 export async function executor<T>(
   client,
-  data: MethodType
+  data: MethodType,
 ): Promise<Response<T>> {
   const request = new Request(client);
 
@@ -42,7 +42,7 @@ export async function executor<T>(
 
   if (data.acceptCode.indexOf(response.status) == -1) {
     throw new Error(
-      `Wrong response status server status code: ${response.status}, error message: ${response.data}`
+      `Wrong response status server status code: ${response.status}, error message: ${response.data}`,
     );
   }
 

@@ -40,7 +40,7 @@ export const ProjectUrl = (client) => {
     },
     download: async (
       url_or_project_url_object: string | { completed_file_url: string },
-      save_path: string
+      save_path: string,
     ) => {
       let url;
 

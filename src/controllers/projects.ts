@@ -15,7 +15,7 @@ export const Projects = (client) => {
     },
     update: async (
       project_id: string,
-      project: SaveProjectDto
+      project: SaveProjectDto,
     ): Promise<Response<ProjectType>> => {
       return await executor<ProjectType>(client, {
         path: `/projects/${project_id}`,
@@ -30,7 +30,6 @@ export const Projects = (client) => {
       });
     },
     list: (page = 1): Promise<Response<ProjectType[]>> => {
-
       return executor<ProjectType[]>(client, {
         path: `/projects/?page=${page}`,
         method: "GET",

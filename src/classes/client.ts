@@ -27,5 +27,4 @@ export class ClientTest implements ClientInterface {
   setAuthentication(request: Request): void {
     request.addHeaders({ authorization: `Bearer ${this.api_key}` });
   }
-
 }

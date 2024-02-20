@@ -1,4 +1,4 @@
-import axios, { AxiosPromise } from "axios";
+import axios, { AxiosPromise, AxiosInstance } from "axios";
 import { ConfigType } from "../types/config.type";
 import * as fs from "fs";
 import { ClientInterface } from "../interfaces/client.interface";
@@ -14,7 +14,7 @@ export type RequestResponseType =
 export class Request {
   private headers: ObjectKeys = {};
   private client: ClientInterface;
-  private axiosInstance;
+  private axiosInstance: AxiosInstance;
   private requestResponseType: RequestResponseType = "arraybuffer";
   private config: ConfigType;
 
@@ -97,6 +97,9 @@ export class Request {
   }
 
   remove(url: string, body: Record<string, any>): AxiosPromise {
-    return this.axiosInstance.delete(url, this.axiosOptions());
+    return this.axiosInstance.delete(url, {
+      data: body,
+      ...this.axiosOptions(),
+    });
   }
 }
