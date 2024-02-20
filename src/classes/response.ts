@@ -3,12 +3,10 @@ import { ResponseInterface } from "../interfaces/response.interface";
 import * as zlib from "zlib";
 import { LibraryResponseInterface } from "../interfaces/LibraryResponse.interface";
 
-export class Response<ResponseType = any>
-  implements ResponseInterface<ResponseType>
-{
-  private response;
+export class Response implements ResponseInterface {
+  private response: LibraryResponseInterface;
 
-  constructor(response: LibraryResponseInterface<ResponseType>) {
+  constructor(response: LibraryResponseInterface) {
     this.setResponse(response);
   }
 
@@ -35,7 +33,7 @@ export class Response<ResponseType = any>
     throw new Error("Unknown file type");
   }
 
-  setResponse(response: LibraryResponseInterface<ResponseType>) {
+  setResponse(response: LibraryResponseInterface) {
     this.response = response;
   }
 
@@ -66,7 +64,7 @@ export class Response<ResponseType = any>
       : null;
   }
 
-  body(): ResponseType {
+  body(): Buffer {
     return this.response.data;
   }
 
