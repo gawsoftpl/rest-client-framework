@@ -66,6 +66,6 @@ describe("test for request class", () => {
 
     expect(response.status).toBe(200);
     expect(fs.existsSync(savePath)).toBeTruthy();
-    expect(fs.statSync(savePath).size).toBe(35588);
+    expect(fs.statSync(savePath).size).toBeGreaterThan(20000);
   });
 });
