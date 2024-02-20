@@ -3,7 +3,9 @@ import { ResponseInterface } from "../interfaces/response.interface";
 import * as zlib from "zlib";
 import { LibraryResponseInterface } from "../interfaces/LibraryResponse.interface";
 
-export class Response<ResponseType = any> implements ResponseInterface {
+export class Response<ResponseType = any>
+  implements ResponseInterface<ResponseType>
+{
   private response;
 
   constructor(response: LibraryResponseInterface<ResponseType>) {
@@ -64,7 +66,7 @@ export class Response<ResponseType = any> implements ResponseInterface {
       : null;
   }
 
-  body(): Buffer {
+  body(): ResponseType {
     return this.response.data;
   }
 

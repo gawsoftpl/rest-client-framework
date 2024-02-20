@@ -1,10 +1,10 @@
 import { LibraryResponseInterface } from "./LibraryResponse.interface";
 
-export interface ResponseInterface {
+export interface ResponseInterface<ResponseType> {
   contentType(): string;
   status(): number;
   encoded(): string;
-  body(): any;
+  body(): ResponseType;
   headers(): Record<string, string>;
   base64(): string;
   save(path: string);
