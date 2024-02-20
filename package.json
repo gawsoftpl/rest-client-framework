@@ -12,7 +12,6 @@
   "homepage": "https://gawsoft.com",
   "license": "MIT",
   "scripts": {
-    "prepack": "npm run build",
     "prepare": "npm run build",
     "build": "tsc",
     "test": "jest",
