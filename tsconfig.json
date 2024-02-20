@@ -6,9 +6,10 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
+    "target": "ES2017",
     "sourceMap": true,
-    "baseUrl": "./",
+    "outDir": "./dist",
+    "baseUrl": "./src",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
@@ -17,5 +18,5 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
   },
-  "exclude": ["node_modules", "test", "dist", "bin", "**/*spec.ts", "deploy"]
+  "exclude": ["tests"]
 }
