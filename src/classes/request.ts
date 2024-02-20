@@ -21,7 +21,6 @@ export class Request {
   constructor(strategy: ClientInterface) {
     this.setStrategy(strategy);
     this.setConfig(this.client.config());
-
   }
 
   setConfig(config: ConfigType) {
@@ -82,10 +81,18 @@ export class Request {
   download(url: string, save_path: string) {
     return new Promise((resolve, reject) => {
       this.axiosInstance
-        .get(url, { responseType: "stream" })
+        .get(url, {
+          responseType: "stream",
+        })
         .then((response) => {
-          response.data.pipe(fs.createWriteStream(save_path));
-          resolve(response);
+          // Create a writable stream and pipe the response data to it
+          const writer = fs.createWriteStream(save_path);
+          response.data.pipe(writer);
+
+          // Optional: Listen for events like 'finish' to know when the writing is complete
+          writer.on("finish", () => {
+            resolve(response);
+          });
         })
         .catch((error) => {
           reject(error);
