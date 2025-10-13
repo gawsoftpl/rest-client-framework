@@ -2,7 +2,7 @@ import { AxiosResponse } from "axios";
 import { Response } from "../classes";
 
 export const convertAxiosResponse = (
-  axiosResponse: AxiosResponse
+  axiosResponse: AxiosResponse,
 ): Response => {
   return new Response({
     data: axiosResponse.data,
@@ -11,7 +11,7 @@ export const convertAxiosResponse = (
         actual[key] = value;
         return actual;
       },
-      {}
+      {},
     ),
     status: axiosResponse.status,
   });
