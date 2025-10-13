@@ -12,9 +12,9 @@
   "homepage": "https://gawsoft.com",
   "license": "MIT",
   "scripts": {
-    "prepare": "npm run build",
     "build": "tsc",
     "test": "jest",
+    "release": "bin/release.sh",
     "dev:mock": "mockoon-cli start -d openapi/mockoon.json --pname openapi",
     "dev:mock:stop": "mockoon-cli stop",
     "start:dev": "tsc --watch",
@@ -24,10 +24,10 @@
     "generate_model": "docker run --rm -v $PWD/src/models:/local openapitools/openapi-generator-cli generate --global-property models -i /local/api-json.json -g typescript -o /local/"
   },
   "dependencies": {
-    "axios": "^1.6.7"
+    "axios": "^1.12.2"
   },
   "devDependencies": {
-    "@mockoon/cli": "^6.2.0",
+    "@mockoon/cli": "^9.3.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.19",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
@@ -39,10 +39,10 @@
     "jimp": "^0.22.10",
     "nodemon": "^3.0.3",
     "prettier": "^3.2.5",
-    "ts-jest": "^29.1.2",
+    "ts-jest": "^29.4.5",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.9.3"
   },
   "jest": {
     "moduleFileExtensions": [

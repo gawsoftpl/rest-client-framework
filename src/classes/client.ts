@@ -15,7 +15,7 @@ export class ClientTest implements ClientInterface {
 
   config(): ConfigType {
     return {
-      endpoint: "https://httpbin.org",
+      endpoint: "https://httpbin.io",
       timeout: 10000,
     };
   }

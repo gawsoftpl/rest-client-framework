@@ -4,6 +4,7 @@ import * as fs from "fs";
 
 describe("Method test", () => {
   let client;
+
   beforeEach(() => {
     client = new ClientTest("abc");
   });
@@ -131,12 +132,11 @@ describe("Method test", () => {
   });
 
   it("Test accept codes", async () => {
-    const savePath = "/tmp/test.jpg";
 
     await expect(
       executor(client, {
         method: "GET",
-        path: "/status/300",
+        path: "/xhr/status/300",
         acceptCode: [200],
       })
     ).rejects.toThrow(Error);

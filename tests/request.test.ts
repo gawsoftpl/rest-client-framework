@@ -44,7 +44,7 @@ describe("test for request class", () => {
   });
 
   it("Post test and json response", async () => {
-    const response = await request.post("https://httpbin.org/post", {
+    const response = await request.post("https://httpbin.io/post", {
       a: 1,
       b: 2,
     });
@@ -60,7 +60,7 @@ describe("test for request class", () => {
   it("Download test", async () => {
     const savePath = "/tmp/test.jpg";
     const response = await request.download(
-      "https://httpbin.org/image/jpeg",
+      "https://httpbin.io/image/jpeg",
       savePath
     );
 

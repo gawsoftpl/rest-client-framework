@@ -3,12 +3,12 @@ import { convertAxiosResponse } from "../src";
 
 describe("Test helpers", () => {
   it("Test convertAxiosResponse", async () => {
-    const response = await axios.get("https://httpbin.org/get", {});
+    const response = await axios.get("https://httpbin.io/get", {});
 
     const resp = convertAxiosResponse(response);
 
     expect(resp.headers()).toMatchObject({
-      "content-type": "application/json",
+      "content-type": "application/json; charset=utf-8",
     });
   });
 });

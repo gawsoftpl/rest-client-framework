@@ -51,7 +51,7 @@ describe("Client test", () => {
       "content-type": "application/json",
     };
     axiosResponse.data = zlib.gzipSync(
-      Buffer.from(JSON.stringify({ test_compress: 1 }))
+      new Uint8Array(Buffer.from(JSON.stringify({ test_compress: 1 })))
     );
 
     response.setResponse(axiosResponse);
@@ -64,7 +64,7 @@ describe("Client test", () => {
       "content-type": "application/json",
     };
     axiosResponse.data = zlib.gzipSync(
-      Buffer.from(JSON.stringify({ test_compress: 1 }))
+      new Uint8Array(Buffer.from(JSON.stringify({ test_compress: 1 })))
     );
 
     response.setResponse(axiosResponse);
