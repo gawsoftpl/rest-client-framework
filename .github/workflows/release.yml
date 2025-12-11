@@ -14,8 +14,12 @@ on:
       - '*'
 
 jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+
   create-release:
     runs-on: ubuntu-latest
+    needs: test
     permissions:
       contents: write
     steps:

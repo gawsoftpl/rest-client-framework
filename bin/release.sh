@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e  # Exit immediately on error
 
-LATEST_TAG=$(git describe --tags --abbrev=0)
+LATEST_TAG=$(git describe --tags --abbrev=0 || echo "No tags found")
 echo "Latest tag in Git: $LATEST_TAG"
 
 # Ask for version number
